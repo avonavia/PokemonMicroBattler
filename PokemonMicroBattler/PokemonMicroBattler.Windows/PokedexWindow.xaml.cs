@@ -96,5 +96,12 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 ItemControl.ItemsSource = temppokelist.Where(p => p.Name.ToLower().Contains(SearchBar.Text.ToLower())).ToList();
             }
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            Close();
+        }
     }
 }

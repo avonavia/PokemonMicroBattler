@@ -44,6 +44,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
                 movelist.Add(m);
             }
 
+            con.Close();
+
             return movelist;
         }
 
@@ -86,6 +88,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
                 pokelist.Add(p);
             }
             reader.Close();
+            con.Close();
             return pokelist;
         }
         public static List<string> GetTypes()
@@ -109,6 +112,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
                 typelist.Add(reader[0].ToString());
             }
             reader.Close();
+
+            con.Close();
 
             return typelist;
         }

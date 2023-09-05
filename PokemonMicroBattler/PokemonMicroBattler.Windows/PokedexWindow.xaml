@@ -48,7 +48,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ComboBox BorderThickness="2" BorderBrush="Black" HorizontalContentAlignment="Center" x:Name="TypeBox" Height="40" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionChanged="TypeBox_SelectionChanged" FontSize="25" FontFamily="Showcard Gothic">
+        <ComboBox BorderThickness="2" BorderBrush="Black" HorizontalContentAlignment="Center" x:Name="TypeBox" Height="40" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionChanged="TypeBox_SelectionChanged" FontSize="25" FontFamily="Showcard Gothic" Grid.Column="2">
             <ComboBox.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#B2EDEBD6" />
             </ComboBox.Resources>
@@ -87,6 +87,12 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
+
+        <Button x:Name="BackButton" Height="100" Click="BackButton_Click" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}">
+            <Button.Background>
+                <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/arrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>
