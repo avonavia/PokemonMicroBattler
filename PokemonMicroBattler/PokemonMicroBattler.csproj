@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D7F2E5F-972D-4224-B22A-365EA264DF53}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PokemonMicroBattler</RootNamespace>
+    <AssemblyName>PokemonMicroBattler</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="PokemonMicroBattler.Windows\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="PokemonMicroBattler.Windows\MenuWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="PokemonMicroBattler.Data\Connection.cs" />
+    <Compile Include="PokemonMicroBattler.Windows\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PokemonMicroBattler.Data\Move.cs" />
+    <Compile Include="PokemonMicroBattler.Data\Pokemon.cs" />
+    <Compile Include="PokemonMicroBattler.Windows\MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PokemonMicroBattler.Windows\PokedexViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PokemonMicroBattler.Windows\PokedexWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PokemonMicroBattler.Windows\PokedexViewWindow.xaml.cs">
+      <DependentUpon>PokedexViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonMicroBattler.Windows\PokedexWindow.xaml.cs">
+      <DependentUpon>PokedexWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\c.ani" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Backgrounds\background.jpg" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\battleball.png" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\dexball.png" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\snorlax.png" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\wallpaper.png" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Abra.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Aerodactyl.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Alakazam.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Arbok.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Arcanine.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Articuno.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Beedrill.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Bellsprout.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Blastoise.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Bulbasaur.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Butterfree.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Caterpie.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Chansey.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Charizard.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Charmander.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Charmeleon.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Clefable.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Clefairy.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Cloyster.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Cubone.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Dewgong.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Diglett.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Ditto.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Dodrio.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Doduo.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Dragonair.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Dragonite.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Dratini.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Drowzee.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Dugtrio.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Eevee.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Ekans.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Electabuzz.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Electrode.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Exeggcute.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Exeggutor.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Farfetch%27d.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Fearow.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Flareon.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Gastly.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Gengar.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Geodude.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Gloom.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Golbat.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Goldeen.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Golduck.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Golem.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Graveler.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Grimer.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Growlithe.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Gyarados.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Haunter.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Hitmonchan.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Hitmonlee.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Horsea.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Hypno.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Ivysaur.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Jigglypuff.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Jolteon.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Jynx.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Kabuto.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Kabutops.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Kadabra.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Kakuna.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Kangaskhan.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Kingler.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Koffing.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Krabby.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Lapras.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Lickitung.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Machamp.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Machoke.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Machop.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Magikarp.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Magmar.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Magnemite.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Magneton.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Mankey.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Marowak.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Meowth.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Metapod.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Mew.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Mewtwo.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Moltres.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Mr.Mime.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Muk.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Nidoking.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Nidoqueen.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Nidoran♀.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Nidoran♂.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Nidorina.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Nidorino.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Ninetales.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Oddish.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Omanyte.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Omastar.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Onix.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Paras.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Parasect.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Persian.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Pidgeot.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Pidgeotto.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Pidgey.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Pikachu.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Pinsir.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Poliwag.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Poliwhirl.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Poliwrath.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Ponyta.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Porygon.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Primeape.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Psyduck.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Raichu.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Rapidash.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Raticate.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Rattata.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Rhydon.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Rhyhorn.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Sandshrew.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Sandslash.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Scyther.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Seadra.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Seaking.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Seel.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Shellder.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Slowbro.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Slowpoke.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Snorlax.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Spearow.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Squirtle.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Starmie.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Staryu.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Tangela.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Tauros.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Tentacool.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Tentacruel.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Vaporeon.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Venomoth.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Venonat.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Venusaur.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Victreebel.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Vileplume.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Voltorb.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Vulpix.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Wartortle.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Weedle.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Weepinbell.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Weezing.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Wigglytuff.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Zapdos.gif" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Zubat.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Other\logo_new.PNG" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\logo_new_transparent_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Other\battle.png" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\pokedex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Backgrounds\pokedexUI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Other\arrow.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
