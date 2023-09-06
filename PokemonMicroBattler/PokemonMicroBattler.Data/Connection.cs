@@ -38,8 +38,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             {
                 Move m = new Move();
                 m.Name = reader[0].ToString();
-                m.Power = reader[1].ToString();
-                m.Accuracy = reader[2].ToString();
+                m.Power = (int)reader[1];
+                m.Accuracy = (int)reader[2];
                 m.Type = reader[3].ToString();
                 movelist.Add(m);
             }

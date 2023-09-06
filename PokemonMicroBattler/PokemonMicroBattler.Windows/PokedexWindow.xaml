@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PokemonMicroBattler.PokemonMicroBattler.Windows"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-         WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen"
         WindowState="Normal"
         ResizeMode="CanResizeWithGrip"
         SizeToContent="Manual"

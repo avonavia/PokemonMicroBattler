@@ -60,17 +60,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="PokemonMicroBattler.Windows\BattleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PokemonMicroBattler.Windows\MenuWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="PokemonMicroBattler.Data\Connection.cs" />
+    <Compile Include="PokemonMicroBattler.Data\Player.cs" />
     <Compile Include="PokemonMicroBattler.Windows\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PokemonMicroBattler.Data\Move.cs" />
     <Compile Include="PokemonMicroBattler.Data\Pokemon.cs" />
+    <Compile Include="PokemonMicroBattler.Windows\BattleWindow.xaml.cs">
+      <DependentUpon>BattleWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PokemonMicroBattler.Windows\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -289,6 +297,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="PokemonMicroBattler.Templates\Other\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Backgrounds\battlebackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Other\attackbutton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

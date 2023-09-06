@@ -26,7 +26,9 @@ namespace PokemonMicroBattler
 
         private void BattleButton_Click(object sender, RoutedEventArgs e)
         {
-
+            BattleWindow battleWindow = new BattleWindow();
+            battleWindow.Show();
+            Close();
         }
     }
 }

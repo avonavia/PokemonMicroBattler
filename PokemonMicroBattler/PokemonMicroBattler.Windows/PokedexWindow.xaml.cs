@@ -32,6 +32,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
             types = Connection.GetTypes();
             types.Add("All");
+            types.Remove("None");
             selectedType = "All";
             TypeBox.ItemsSource = types;
             TypeBox.SelectedItem = selectedType;
