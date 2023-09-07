@@ -44,12 +44,12 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             player1.Name = "a";
             player1.Pokemon = pokelist.Where(p => p.ID == 10).First();
             player1.Win = false;
-            player1.HP = 20000;
+            player1.HP = 200;
 
             player2.Name = "b";
             player2.Pokemon = pokelist.Where(p => p.ID == 100).First();
             player2.Win = false;
-            player2.HP = 20000;
+            player2.HP = 200;
 
             Player1Health.Text = player1.HP.ToString();
             Player2Health.Text = player2.HP.ToString();
@@ -65,7 +65,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             ChangeAttacks();
         }
 
-        public void ChangeAttacks()
+        private void ChangeAttacks()
         {
             if (turn == 0)
             {
@@ -122,119 +122,106 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             }
         }
 
+        private void Attack(int attackNum)
+        {
+                ChangeAttacks();
+                if (turn == 0)
+                {
+                    try
+                    {
+                        player2.HP = player2.HP - player1.Pokemon.Moves[attackNum].Power;
+                        if (player2.HP <= 0)
+                        {
+                            Player2Health.Text = "0";
+                            player1.Win = true;
+                            WinState(player1);
+                        }
+                        else
+                        {
+                            Player2Health.Text = player2.HP.ToString();
+                        }
+                        BattleEventTextHandler(player1.Pokemon.Name, player1.Pokemon.Moves[attackNum].Name, true);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        player1.HP = player1.HP - player2.Pokemon.Moves[attackNum].Power;
+                        if (player1.HP <= 0)
+                        {
+                            Player1Health.Text = "0";
+                            player2.Win = true;
+                            WinState(player2);
+                    }
+                        else
+                        {
+                            Player1Health.Text = player1.HP.ToString();
+                        }
+                        BattleEventTextHandler(player2.Pokemon.Name, player2.Pokemon.Moves[attackNum].Name, true);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+        }
+
+        private void BattleEventTextHandler(string pokemonName, string attackName, bool state)
+        {
+            if (!player1.Win && !player2.Win)
+            {
+                string hitText = string.Empty;
+                if (state)
+                {
+                    hitText = "hit!";
+                }
+                else
+                {
+                    hitText = "missed!";
+                }
+
+                BattleText.Text = pokemonName + "  used  " + attackName + "!  " + "\nIt  " + hitText;
+            }
+        }
+
+        private void WinState(Player player)
+        {
+          BattleText.Text = player.Name + "  is  a  winner!";
+        }
         private void Attack1_Click(object sender, RoutedEventArgs e)
         {
-            ChangeAttacks();
-            if (turn == 0)
+            if (Attack1.Content != null && !player1.Win && !player2.Win)
             {
-                try
-                {
-                    player2.HP = player2.HP - player1.Pokemon.Moves[0].Power;
-                    Player2Health.Text = player2.HP.ToString();
-                }
-                catch
-                {
-
-                }
-            }
-            else
-            {
-                try
-                {
-                    player1.HP = player1.HP - player2.Pokemon.Moves[0].Power;
-                    Player1Health.Text = player1.HP.ToString();
-                }
-                catch
-                {
-
-                }
+                Attack(0);
             }
         }
 
         private void Attack2_Click(object sender, RoutedEventArgs e)
         {
-            ChangeAttacks();
-            if (turn == 0)
+            if (Attack2.Content != null && !player1.Win && !player2.Win)
             {
-                try
-                {
-                    player2.HP = player2.HP - player1.Pokemon.Moves[1].Power;
-                    Player2Health.Text = player2.HP.ToString();
-                }
-                catch
-                {
-
-                }
-            }
-            else
-            {
-                try
-                {
-                    player1.HP = player1.HP - player2.Pokemon.Moves[1].Power;
-                    Player1Health.Text = player1.HP.ToString();
-                }
-                catch
-                {
-
-                }
+                Attack(1);
             }
         }
 
         private void Attack3_Click(object sender, RoutedEventArgs e)
         {
-            ChangeAttacks();
-            if (turn == 0)
+            if (Attack3.Content != null && !player1.Win && !player2.Win)
             {
-                try
-                {
-                    player2.HP = player2.HP - player1.Pokemon.Moves[2].Power;
-                    Player2Health.Text = player2.HP.ToString();
-                }
-                catch
-                {
-
-                }
-            }
-            else
-            {
-                try
-                {
-                    player1.HP = player1.HP - player2.Pokemon.Moves[2].Power;
-                    Player1Health.Text = player1.HP.ToString();
-                }
-                catch
-                {
-
-                }
+                Attack(2);
             }
         }
 
         private void Attack4_Click(object sender, RoutedEventArgs e)
         {
-            ChangeAttacks();
-            if (turn == 0)
+            if (Attack4.Content != null && !player1.Win && !player2.Win)
             {
-                try
-                {
-                    player2.HP = player2.HP - player1.Pokemon.Moves[3].Power;
-                    Player2Health.Text = player2.HP.ToString();
-                }
-                catch
-                {
-
-                }
-            }
-            else
-            {
-                try
-                {
-                    player1.HP = player1.HP - player2.Pokemon.Moves[3].Power;
-                    Player1Health.Text = player1.HP.ToString();
-                }
-                catch
-                {
-
-                }
+                Attack(3);
             }
         }
     }
