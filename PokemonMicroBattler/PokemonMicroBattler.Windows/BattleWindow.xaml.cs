@@ -44,12 +44,12 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             player1.Name = "a";
             player1.Pokemon = pokelist.Where(p => p.ID == 10).First();
             player1.Win = false;
-            player1.HP = 200;
+            player1.HP = 2000;
 
             player2.Name = "b";
             player2.Pokemon = pokelist.Where(p => p.ID == 100).First();
             player2.Win = false;
-            player2.HP = 200;
+            player2.HP = 2000;
 
             Player1Health.Text = player1.HP.ToString();
             Player2Health.Text = player2.HP.ToString();
@@ -124,12 +124,16 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
         private void Attack(int attackNum)
         {
-                ChangeAttacks();
-                if (turn == 0)
+            ChangeAttacks();
+            if (turn == 0)
+            {
+                try
                 {
-                    try
+                    Random random = new Random();
+                    if (random.Next(1, 100) <= player1.Pokemon.Moves[attackNum].Accuracy)
                     {
                         player2.HP = player2.HP - player1.Pokemon.Moves[attackNum].Power;
+
                         if (player2.HP <= 0)
                         {
                             Player2Health.Text = "0";
@@ -142,14 +146,22 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                         }
                         BattleEventTextHandler(player1.Pokemon.Name, player1.Pokemon.Moves[attackNum].Name, true);
                     }
-                    catch
+                    else
                     {
-
+                        BattleEventTextHandler(player1.Pokemon.Name, player1.Pokemon.Moves[attackNum].Name, false);
                     }
                 }
-                else
+                catch
                 {
-                    try
+
+                }
+            }
+            else
+            {
+                try
+                {
+                    Random random = new Random();
+                    if (random.Next(1, 100) <= player2.Pokemon.Moves[attackNum].Accuracy)
                     {
                         player1.HP = player1.HP - player2.Pokemon.Moves[attackNum].Power;
                         if (player1.HP <= 0)
@@ -157,18 +169,23 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                             Player1Health.Text = "0";
                             player2.Win = true;
                             WinState(player2);
-                    }
+                        }
                         else
                         {
                             Player1Health.Text = player1.HP.ToString();
                         }
                         BattleEventTextHandler(player2.Pokemon.Name, player2.Pokemon.Moves[attackNum].Name, true);
                     }
-                    catch
+                    else
                     {
-
+                        BattleEventTextHandler(player2.Pokemon.Name, player2.Pokemon.Moves[attackNum].Name, false);
                     }
                 }
+                catch
+                {
+
+                }
+            }
         }
 
         private void BattleEventTextHandler(string pokemonName, string attackName, bool state)
@@ -191,7 +208,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
         private void WinState(Player player)
         {
-          BattleText.Text = player.Name + "  is  a  winner!";
+            BattleText.Text = player.Name + "  is  a  winner!";
         }
         private void Attack1_Click(object sender, RoutedEventArgs e)
         {
