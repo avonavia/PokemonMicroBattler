@@ -1,10 +1,13 @@
 ﻿using PokemonMicroBattler.PokemonMicroBattler.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 using WpfAnimatedGif;
 
 namespace PokemonMicroBattler.PokemonMicroBattler.Windows
@@ -19,6 +22,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
         public static int turn { get; set; }
         public static Player player1 { get; set; }
         public static Player player2 { get; set; }
+
+        public bool textWrote = true;
 
         public List<Button> buttonlist = new List<Button>();
 
@@ -47,7 +52,24 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
             ChangeAttacks();
         }
+        private async void ShowHit(Image hit)
+        {
+            hit.Visibility = Visibility.Visible;
+            await Task.Delay(500);
+            hit.Visibility = Visibility.Hidden;
+        }
 
+        private async void ShowTextByLetter(TextBlock textblock, string text)
+        {
+            textWrote = false;
+            textblock.Text = null;
+            foreach (var letter in text)
+            {
+                textblock.Text += letter;
+                await Task.Delay(50);
+            }
+            textWrote = true;
+        }
         private void ChangeAttacks()
         {
             if (turn == 0)
@@ -116,6 +138,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                     if (random.Next(1, 100) <= player1.Pokemon.Moves[attackNum].Accuracy)
                     {
                         player2.HP = player2.HP - player1.Pokemon.Moves[attackNum].Power;
+                        ShowHit(Player2Hit);
 
                         if (player2.HP <= 0)
                         {
@@ -147,6 +170,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                     if (random.Next(1, 100) <= player2.Pokemon.Moves[attackNum].Accuracy)
                     {
                         player1.HP = player1.HP - player2.Pokemon.Moves[attackNum].Power;
+                        ShowHit(Player1Hit);
+
                         if (player1.HP <= 0)
                         {
                             Player1Health.Text = "0";
@@ -176,6 +201,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             if (!player1.Win && !player2.Win)
             {
                 string hitText = string.Empty;
+
                 if (state)
                 {
                     hitText = "hit!";
@@ -185,17 +211,19 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                     hitText = "missed!";
                 }
 
-                BattleText.Text = pokemonName + "  used  " + attackName + "!  " + "\nIt  " + hitText;
+                string battletext = pokemonName + "  used  " + attackName + "!  " + "\nIt  " + hitText;
+                ShowTextByLetter(BattleText, battletext);
             }
         }
 
         private void WinState(Player player)
         {
-            BattleText.Text = player.Name + "  is  a  winner!";
+            string winnerannounce = player.Name + "  is  a  winner!";
+            ShowTextByLetter(BattleText, winnerannounce);
         }
         private void Attack1_Click(object sender, RoutedEventArgs e)
         {
-            if (Attack1.Content != null && !player1.Win && !player2.Win)
+            if (Attack1.Content != null && !player1.Win && !player2.Win && textWrote)
             {
                 Attack(0);
             }
@@ -203,7 +231,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
         private void Attack2_Click(object sender, RoutedEventArgs e)
         {
-            if (Attack2.Content != null && !player1.Win && !player2.Win)
+            if (Attack2.Content != null && !player1.Win && !player2.Win && textWrote)
             {
                 Attack(1);
             }
@@ -211,7 +239,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
         private void Attack3_Click(object sender, RoutedEventArgs e)
         {
-            if (Attack3.Content != null && !player1.Win && !player2.Win)
+            if (Attack3.Content != null && !player1.Win && !player2.Win && textWrote)
             {
                 Attack(2);
             }
@@ -219,7 +247,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
         private void Attack4_Click(object sender, RoutedEventArgs e)
         {
-            if (Attack4.Content != null && !player1.Win && !player2.Win)
+            if (Attack4.Content != null && !player1.Win && !player2.Win && textWrote)
             {
                 Attack(3);
             }

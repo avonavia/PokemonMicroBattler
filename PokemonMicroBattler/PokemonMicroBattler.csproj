@@ -137,6 +137,7 @@
     <Resource Include="PokemonMicroBattler.Templates\Backgrounds\background.jpg" />
     <Resource Include="PokemonMicroBattler.Templates\Other\battleball.png" />
     <Resource Include="PokemonMicroBattler.Templates\Other\dexball.png" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\hit.gif" />
     <Resource Include="PokemonMicroBattler.Templates\Other\snorlax.png" />
     <Resource Include="PokemonMicroBattler.Templates\Other\wallpaper.png" />
     <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\Abra.gif" />

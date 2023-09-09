@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonMicroBattler.PokemonMicroBattler.Windows"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowState="Normal"
@@ -68,9 +69,13 @@
             <Image Source="/PokemonMicroBattler.Templates/Other/heart.png" Height="20" HorizontalAlignment="Right" Margin="0,0,5,0"/>
             <TextBlock x:Name="Player2Health" Margin="1" TextAlignment="Center" Height="30" Width="130" FontFamily="Showcard Gothic" FontSize="20"/>
         </Grid>
-        
+
         <Image x:Name="Poke1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="140" Width="140" Grid.Column="0" Grid.Row="1"/>
         <Image x:Name="Poke2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="140" Width="140" Grid.Column="2" Grid.Row="0" Margin="0,0,0,50"/>
+
+        <Image x:Name="Player1Hit" Visibility="Hidden" gif:ImageBehavior.AnimatedSource="/PokemonMicroBattler.Templates/Other/hit.gif" HorizontalAlignment="Right" VerticalAlignment="Top" Height="200" Width="200" Grid.Column="0" Grid.Row="1" Margin="0,0,100,0"/>
+        <Image x:Name="Player2Hit" Visibility="Hidden" gif:ImageBehavior.AnimatedSource="/PokemonMicroBattler.Templates/Other/hit.gif" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="200" Width="200" Grid.Column="2" Grid.Row="0"/>
+
 
         <Button x:Name="Attack1" FontFamily="Showcard Gothic" Grid.Row="1" Grid.Column="2" Height="50" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left"  Click="Attack1_Click" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}">
             <Button.Background>
@@ -78,19 +83,19 @@
             </Button.Background>
         </Button>
         <Button x:Name="Attack2" FontFamily="Showcard Gothic" Grid.Row="1" Grid.Column="2" Height="50" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Attack2_Click" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}">
-        <Button.Background>
+            <Button.Background>
                 <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/attackbutton.png" Stretch="Uniform"/>
-        </Button.Background>
+            </Button.Background>
         </Button>
         <Button x:Name="Attack3" FontFamily="Showcard Gothic" Grid.Row="1" Grid.Column="2" Height="50" Width="120" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Attack3_Click" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}">
-        <Button.Background>
+            <Button.Background>
                 <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/attackbutton.png" Stretch="Uniform"/>
-        </Button.Background>
+            </Button.Background>
         </Button>
         <Button x:Name="Attack4" FontFamily="Showcard Gothic" Grid.Row="1" Grid.Column="2" Height="50" Width="120" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Attack4_Click" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}">
-        <Button.Background>
-            <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/attackbutton.png" Stretch="Uniform"/>
-        </Button.Background>
+            <Button.Background>
+                <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/attackbutton.png" Stretch="Uniform"/>
+            </Button.Background>
         </Button>
     </Grid>
 </Window>
