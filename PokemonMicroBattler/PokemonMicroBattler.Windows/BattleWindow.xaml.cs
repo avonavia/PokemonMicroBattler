@@ -2,16 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WpfAnimatedGif;
 
 namespace PokemonMicroBattler.PokemonMicroBattler.Windows
@@ -24,9 +17,9 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             FillData();
         }
         public static int turn { get; set; }
+        public static Player player1 { get; set; }
+        public static Player player2 { get; set; }
 
-        public Player player1 = new Player();
-        public Player player2 = new Player();
         public List<Button> buttonlist = new List<Button>();
 
         public void FillData()
@@ -40,16 +33,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
             List<Pokemon> pokelist = new List<Pokemon>();
             pokelist = Connection.GetPokemonList();
-
-            player1.Name = "a";
-            player1.Pokemon = pokelist.Where(p => p.ID == 10).First();
-            player1.Win = false;
-            player1.HP = 2000;
-
-            player2.Name = "b";
-            player2.Pokemon = pokelist.Where(p => p.ID == 100).First();
-            player2.Win = false;
-            player2.HP = 2000;
 
             Player1Health.Text = player1.HP.ToString();
             Player2Health.Text = player2.HP.ToString();

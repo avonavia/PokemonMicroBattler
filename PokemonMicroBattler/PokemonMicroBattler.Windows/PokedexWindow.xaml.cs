@@ -45,10 +45,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             pokedexViewWindow.Show();
             Close();
         }
-        public void Search()
-        {
-
-        }
         public void SortByType()
         {
             if (selectedType != "All")

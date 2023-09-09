@@ -60,6 +60,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="PokemonMicroBattler.Windows\BattleSelectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PokemonMicroBattler.Windows\BattleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,6 +80,9 @@
     </Compile>
     <Compile Include="PokemonMicroBattler.Data\Move.cs" />
     <Compile Include="PokemonMicroBattler.Data\Pokemon.cs" />
+    <Compile Include="PokemonMicroBattler.Windows\BattleSelectorWindow.xaml.cs">
+      <DependentUpon>BattleSelectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PokemonMicroBattler.Windows\BattleWindow.xaml.cs">
       <DependentUpon>BattleWindow.xaml</DependentUpon>
     </Compile>
