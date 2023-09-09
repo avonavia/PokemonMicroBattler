@@ -166,5 +166,12 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
         {
             (e.Source as Border).BorderBrush = new SolidColorBrush(Colors.Black);
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            Close();
+        }
     }
 }
