@@ -74,6 +74,7 @@
     </Page>
     <Compile Include="PokemonMicroBattler.Data\Connection.cs" />
     <Compile Include="PokemonMicroBattler.Data\Player.cs" />
+    <Compile Include="PokemonMicroBattler.Data\TypeAdvantageCalculator.cs" />
     <Compile Include="PokemonMicroBattler.Windows\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -50,10 +50,15 @@
             <ColumnDefinition Width="311*"/>
             <ColumnDefinition Width="35*"/>
         </Grid.ColumnDefinitions>
-
+        
         <Grid Height="170" VerticalAlignment="Top">
             <Rectangle Fill="AntiqueWhite" Stroke="DimGray" StrokeThickness="5"/>
             <TextBlock x:Name="BattleText" Foreground="Black" TextWrapping="Wrap" FontFamily="Showcard Gothic" FontSize="20" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="BackButton" Visibility="Hidden" Height="50" Width="120" VerticalAlignment="Bottom" HorizontalAlignment="Right" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}" Click="BackButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/arrow.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
         </Grid>
 
         <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom">

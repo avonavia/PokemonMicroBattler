@@ -1,13 +1,11 @@
 ﻿using PokemonMicroBattler.PokemonMicroBattler.Data;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Threading;
 using WpfAnimatedGif;
 
 namespace PokemonMicroBattler.PokemonMicroBattler.Windows
@@ -26,7 +24,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
         public bool textWrote = true;
 
         public List<Button> buttonlist = new List<Button>();
-
         public void FillData()
         {
             turn = 0;
@@ -58,7 +55,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             await Task.Delay(500);
             hit.Visibility = Visibility.Hidden;
         }
-
         private async void ShowTextByLetter(TextBlock textblock, string text)
         {
             textWrote = false;
@@ -116,7 +112,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                     count++;
                 }
             }
-
             if (turn == 0)
             {
                 turn = 1;
@@ -126,7 +121,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 turn = 0;
             }
         }
-
         private void Attack(int attackNum)
         {
             ChangeAttacks();
@@ -137,7 +131,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                     Random random = new Random();
                     if (random.Next(1, 100) <= player1.Pokemon.Moves[attackNum].Accuracy)
                     {
-                        player2.HP = player2.HP - player1.Pokemon.Moves[attackNum].Power;
+                        var multiplier = TypeAdvantageCalculator.CalculateTypeAdvantageMultiplier(player1.Pokemon.Moves[attackNum], player2.Pokemon);
+                        player2.HP = player2.HP - (int)(player1.Pokemon.Moves[attackNum].Power * multiplier);
                         ShowHit(Player2Hit);
 
                         if (player2.HP <= 0)
@@ -150,11 +145,11 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                         {
                             Player2Health.Text = player2.HP.ToString();
                         }
-                        BattleEventTextHandler(player1.Pokemon.Name, player1.Pokemon.Moves[attackNum].Name, true);
+                        BattleEventTextHandler(player1.Pokemon.Name, player1.Pokemon.Moves[attackNum].Name, true, TypeAdvantageCalculator.GetEffectivenessName(multiplier));
                     }
                     else
                     {
-                        BattleEventTextHandler(player1.Pokemon.Name, player1.Pokemon.Moves[attackNum].Name, false);
+                        BattleEventTextHandler(player1.Pokemon.Name, player1.Pokemon.Moves[attackNum].Name, false, "");
                     }
                 }
                 catch
@@ -169,7 +164,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                     Random random = new Random();
                     if (random.Next(1, 100) <= player2.Pokemon.Moves[attackNum].Accuracy)
                     {
-                        player1.HP = player1.HP - player2.Pokemon.Moves[attackNum].Power;
+                        var multiplier = TypeAdvantageCalculator.CalculateTypeAdvantageMultiplier(player2.Pokemon.Moves[attackNum], player1.Pokemon);
+                        player1.HP = player1.HP - (int)(player2.Pokemon.Moves[attackNum].Power * multiplier);
                         ShowHit(Player1Hit);
 
                         if (player1.HP <= 0)
@@ -182,11 +178,12 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                         {
                             Player1Health.Text = player1.HP.ToString();
                         }
-                        BattleEventTextHandler(player2.Pokemon.Name, player2.Pokemon.Moves[attackNum].Name, true);
+
+                        BattleEventTextHandler(player2.Pokemon.Name, player2.Pokemon.Moves[attackNum].Name, true, TypeAdvantageCalculator.GetEffectivenessName(multiplier));
                     }
                     else
                     {
-                        BattleEventTextHandler(player2.Pokemon.Name, player2.Pokemon.Moves[attackNum].Name, false);
+                        BattleEventTextHandler(player2.Pokemon.Name, player2.Pokemon.Moves[attackNum].Name, false, "");
                     }
                 }
                 catch
@@ -195,12 +192,12 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 }
             }
         }
-
-        private void BattleEventTextHandler(string pokemonName, string attackName, bool state)
+        private void BattleEventTextHandler(string pokemonName, string attackName, bool state, string effectiveness)
         {
             if (!player1.Win && !player2.Win)
             {
-                string hitText = string.Empty;
+                string hitText;
+                string battletext;
 
                 if (state)
                 {
@@ -211,15 +208,58 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                     hitText = "missed!";
                 }
 
-                string battletext = pokemonName + "  used  " + attackName + "!  " + "\nIt  " + hitText;
+                if (state)
+                {
+                    if (effectiveness == "Doesn't  Affect")
+                    {
+                        battletext = pokemonName + "  used  " + attackName + "!  " + "\nIt  " + hitText + "\nIt  " + effectiveness + "  The  Opposing  Pokemon";
+                    }
+                    else
+                    {
+                        battletext = pokemonName + "  used  " + attackName + "!  " + "\nIt  " + hitText + "\nIt  Was  " + effectiveness;
+                    }
+                }
+                else
+                {
+                    battletext = pokemonName + "  used  " + attackName + "!  " + "\nIt  " + hitText;
+                }
+
                 ShowTextByLetter(BattleText, battletext);
             }
         }
-
         private void WinState(Player player)
         {
             string winnerannounce = player.Name + "  is  a  winner!";
             ShowTextByLetter(BattleText, winnerannounce);
+            BackButton.Visibility = Visibility.Visible;
+
+            Player otherPlayer;
+            if (!player1.Win)
+            {
+                otherPlayer = player1;
+            }
+            else
+            {
+                otherPlayer = player2;
+            }
+
+            Connection.AddLog(player.Name, GetPlayerStatus(player), otherPlayer.Name, player.Pokemon.ID);
+            Connection.AddLog(otherPlayer.Name, GetPlayerStatus(otherPlayer), player.Name, otherPlayer.Pokemon.ID);
+        }
+        private string GetPlayerStatus(Player player)
+        {
+            string playerStatus;
+
+            if (player.Win)
+            {
+                playerStatus = "Won";
+            }
+            else
+            {
+                playerStatus = "Lost";
+            }
+
+            return playerStatus;
         }
         private void Attack1_Click(object sender, RoutedEventArgs e)
         {
@@ -228,7 +268,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 Attack(0);
             }
         }
-
         private void Attack2_Click(object sender, RoutedEventArgs e)
         {
             if (Attack2.Content != null && !player1.Win && !player2.Win && textWrote)
@@ -236,7 +275,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 Attack(1);
             }
         }
-
         private void Attack3_Click(object sender, RoutedEventArgs e)
         {
             if (Attack3.Content != null && !player1.Win && !player2.Win && textWrote)
@@ -244,13 +282,18 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 Attack(2);
             }
         }
-
         private void Attack4_Click(object sender, RoutedEventArgs e)
         {
             if (Attack4.Content != null && !player1.Win && !player2.Win && textWrote)
             {
                 Attack(3);
             }
+        }
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            Close();
         }
     }
 }

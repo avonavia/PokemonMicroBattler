@@ -48,7 +48,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
 
             return movelist;
         }
-
         public static List<Pokemon> GetPokemonList()
         {
             List<Pokemon> pokelist = new List<Pokemon>();
@@ -116,6 +115,50 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             con.Close();
 
             return typelist;
+        }
+        public static void AddLog(string name1, string winState, string name2, int id)
+        {
+            string cmdString = "AddLog";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter name1Param = new SqlParameter
+            {
+                ParameterName = "@name1",
+                Value = name1
+            };
+            cmd.Parameters.Add(name1Param);
+
+            SqlParameter winstateParam = new SqlParameter
+            {
+                ParameterName = "@winstate",
+                Value = winState
+            };
+            cmd.Parameters.Add(winstateParam);
+
+            SqlParameter name2Param = new SqlParameter
+            {
+                ParameterName = "@name2",
+                Value = name2
+            };
+            cmd.Parameters.Add(name2Param);
+
+            SqlParameter idParam = new SqlParameter
+            {
+                ParameterName = "@pokeID",
+                Value = id
+            };
+            cmd.Parameters.Add(idParam);
+
+            con.Open();
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }
