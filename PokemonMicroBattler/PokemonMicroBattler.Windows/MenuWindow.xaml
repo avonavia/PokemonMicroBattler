@@ -62,6 +62,14 @@
                 <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/battle.png"/>
             </Button.Background>
         </Button>
+        <Button x:Name="LogButton" Height="30" Width="30" HorizontalAlignment="Left" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{StaticResource NormalHover}" Grid.Row="1" Grid.Column="2" Click="LogButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/notebook.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 
 </Window>

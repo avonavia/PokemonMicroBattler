@@ -30,5 +30,12 @@ namespace PokemonMicroBattler
             battleSelectorWindow.Show();
             Close();
         }
+
+        private void LogButton_Click(object sender, RoutedEventArgs e)
+        {
+            LogWindow logWindow = new LogWindow();
+            logWindow.Show();
+            Close();
+        }
     }
 }

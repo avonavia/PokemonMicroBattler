@@ -68,10 +68,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PokemonMicroBattler.Windows\LogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PokemonMicroBattler.Windows\MenuWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="PokemonMicroBattler.Data\BattleLog.cs" />
     <Compile Include="PokemonMicroBattler.Data\Connection.cs" />
     <Compile Include="PokemonMicroBattler.Data\Player.cs" />
     <Compile Include="PokemonMicroBattler.Data\TypeAdvantageCalculator.cs" />
@@ -86,6 +91,9 @@
     </Compile>
     <Compile Include="PokemonMicroBattler.Windows\BattleWindow.xaml.cs">
       <DependentUpon>BattleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonMicroBattler.Windows\LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PokemonMicroBattler.Windows\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
@@ -315,6 +323,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="PokemonMicroBattler.Templates\Other\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PokemonMicroBattler.Templates\Other\notebook.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

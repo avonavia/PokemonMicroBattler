@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Media.Imaging;
+using System.Linq;
 
 namespace PokemonMicroBattler.PokemonMicroBattler.Data
 {
@@ -159,6 +160,41 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             cmd.ExecuteNonQuery();
 
             con.Close();
+        }
+
+        public static List<BattleLog> GetLogs()
+        {
+            List<BattleLog> loglist = new List<BattleLog>();
+
+            string cmdString = "GetLogs";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            con.Open();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                BattleLog l = new BattleLog();
+
+                l.ID = (int)reader[0];
+                l.Player = reader[1].ToString();
+                l.WinState = reader[2].ToString();
+                l.PlayerOther = reader[3].ToString();
+                l.Pokemon = GetPokemonList().Where(p => p.ID == (int)reader[4]).First();
+                l.DateTime = (DateTime)reader[5];
+                
+                loglist.Add(l);
+            }
+
+            con.Close();
+
+            return loglist;
         }
     }
 }
