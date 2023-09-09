@@ -54,7 +54,6 @@
             </ComboBox.Resources>
         </ComboBox>
 
-
         <Button x:Name="BackButton" Grid.Column="0" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}" Foreground="{x:Null}" Click="BackButton_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/arrow.png"/>

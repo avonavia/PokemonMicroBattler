@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using PokemonMicroBattler.PokemonMicroBattler.Data;
 using WpfAnimatedGif;
 
@@ -11,6 +14,15 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
         {
             InitializeComponent();
             FillData();
+        }
+        private async void ShowTextByLetter(TextBlock textblock, string text)
+        {
+            textblock.Text = null;
+            foreach (var letter in text)
+            {
+                textblock.Text += letter;
+                await Task.Delay(50);
+            }
         }
 
         public void FillData()
@@ -29,7 +41,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             {
                 LevelBlock.Text = pokemon.EvolveLevel.ToString();
             }
-            DescBlock.Text = pokemon.Description;
+            ShowTextByLetter(DescBlock, pokemon.Description);
             HeightBlock.Text = pokemon.Height;
             WeightBlock.Text = pokemon.Weight;
         }
