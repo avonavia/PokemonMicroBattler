@@ -125,7 +125,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
         private void FinishButton_Click(object sender, RoutedEventArgs e)
         {
-            if (player1.Name != "" && player2.Name != "" && player1.Pokemon != null && player2.Pokemon != null)
+            if (player1.Name != "" && player2.Name != "" && player1.Pokemon != null && player2.Pokemon != null && player1.Name.Length < 255 && player2.Name.Length < 255)
             {
                 player1.Win = false;
                 player1.HP = 300;
