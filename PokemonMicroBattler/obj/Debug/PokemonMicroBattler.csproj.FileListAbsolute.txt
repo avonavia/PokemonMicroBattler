@@ -1,0 +1,46 @@
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.exe.config
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.exe
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.pdb
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.AssemblyReference.cache
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.SuggestedBindingRedirects.cache
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\App.g.cs
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler_MarkupCompile.cache
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.g.resources
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Properties.Resources.resources
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.GenerateResource.cache
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.CoreCompileInputs.cache
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.exe
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.pdb
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\MenuWindow.baml
+C:\Users\nyanp\source\repos\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\MenuWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.exe.config
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.exe
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.pdb
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.AssemblyReference.cache
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.SuggestedBindingRedirects.cache
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\MenuWindow.baml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\MenuWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler_MarkupCompile.cache
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.g.resources
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Properties.Resources.resources
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.GenerateResource.cache
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.CoreCompileInputs.cache
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.exe
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.pdb
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\PokedexWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler_MarkupCompile.lref
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\App.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\PokedexWindow.baml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\WpfAnimatedGif.dll
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\WpfAnimatedGif.xml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.CopyComplete
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\PokedexViewWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\PokedexViewWindow.baml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\BattleWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\BattleWindow.baml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\BattleSelectorWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\BattleSelectorWindow.baml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\LogWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\LogWindow.baml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler_Content.g.cs

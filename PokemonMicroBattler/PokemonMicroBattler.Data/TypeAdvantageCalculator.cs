@@ -24,11 +24,11 @@
 
                         if (type2 == "Rock")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         if (type2 == "Ghost")
                         {
-                            multiplier += 0;
+                            multiplier *= 0;
                         }
                         break;
                     }
@@ -45,11 +45,11 @@
 
                         if (type2 == "Grass" || type2 == "Ice" || type2 == "Bug")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Fire" || type2 == "Water" || type2 == "Rock" || type2 == "Dragon")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -66,11 +66,11 @@
 
                         if (type2 == "Fire" || type2 == "Ground" || type2 == "Rock")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Water" || type2 == "Grass" || type2 == "Dragon")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -91,15 +91,15 @@
 
                         if (type2 == "Water" || type2 == "Flying")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Electric" || type2 == "Grass" || type2 == "Dragon")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         if (type2 == "Ground")
                         {
-                            multiplier += 0;
+                            multiplier *= 0;
                         }
                         break;
                     }
@@ -116,11 +116,11 @@
 
                         if (type2 == "Water" || type2 == "Ground" || type2 == "Rock")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Fire" || type2 == "Grass" || type2 == "Poison" || type2 == "Flying" || type2 == "Bug" || type2 == "Dragon")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -137,11 +137,11 @@
 
                         if (type2 == "Grass" || type2 == "Ground" || type2 == "Flying" || type2 == "Dragon")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Fire" || type2 == "Water" || type2 == "Ice")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -162,15 +162,15 @@
 
                         if (type2 == "Normal" || type2 == "Ice" || type2 == "Rock")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Poison" || type2 == "Flying" || type2 == "Psychic" || type2 == "Bug")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         if (type2 == "Ghost")
                         {
-                            multiplier += 0;
+                            multiplier *= 0;
                         }
                         break;
                     }
@@ -187,11 +187,11 @@
 
                         if (type2 == "Grass")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Poison" || type2 == "Ground" || type2 == "Rock" || type2 == "Ghost")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -212,15 +212,15 @@
 
                         if (type2 == "Fire" || type2 == "Electric" || type2 == "Poison" || type2 == "Rock")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Grass" || type2 == "Bug")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         if (type2 == "Flying")
                         {
-                            multiplier += 0;
+                            multiplier *= 0;
                         }
                         break;
                     }
@@ -237,11 +237,11 @@
 
                         if (type2 == "Grass" || type2 == "Fighting" || type2 == "Bug")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Electric" || type2 == "Rock")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -258,11 +258,11 @@
 
                         if (type2 == "Fighting" || type2 == "Poison")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Psychic")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -279,11 +279,11 @@
 
                         if (type2 == "Grass" || type2 == "Psychic")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Fire" || type2 == "Fighting" || type2 == "Poison" || type2 == "Flying" || type2 == "Ghost")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -300,11 +300,11 @@
 
                         if (type2 == "Fire" || type2 == "Ice" || type2 == "Flying" || type2 == "Bug")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Fighting" || type2 == "Ground")
                         {
-                            multiplier += 0.5;
+                            multiplier *= 0.5;
                         }
                         break;
                     }
@@ -321,11 +321,11 @@
 
                         if (type2 == "Psychic" || type2 == "Ghost")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         if (type2 == "Normal")
                         {
-                            multiplier += 0;
+                            multiplier *= 0;
                         }
                         break;
                     }
@@ -338,7 +338,7 @@
 
                         if (type2 == "Dragon")
                         {
-                            multiplier += 2;
+                            multiplier *= 2;
                         }
                         break;
                     }
@@ -357,25 +357,30 @@
                         effectiveness = "Doesn't  Affect";
                         break;
                     }
+                case 0.25:
+                    {
+                        effectiveness = "Not  Very  Effective. . .";
+                        break;
+                    }
                 case 0.5:
                     {
-                        effectiveness = "Not  Very  Effective  . . .";
+                        effectiveness = "Not  Very  Effective. . .";
                         break;
                     }
                 case 1:
                     {
-                        effectiveness = "Effective";
-                        break;
-                    }
-                case 1.5:
-                    {
-                        effectiveness = "Very  Effective  !";
+                        effectiveness = "Effective!";
                         break;
                     }
                 case 2:
                     {
-                        effectiveness = "Super  Effective  !";
+                        effectiveness = "Very  Effective!";
                             break;
+                    }
+                case 4:
+                    {
+                        effectiveness = "Super  Effective!";
+                        break;
                     }
             }
             return effectiveness;

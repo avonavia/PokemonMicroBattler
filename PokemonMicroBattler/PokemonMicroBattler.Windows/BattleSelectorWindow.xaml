@@ -62,7 +62,7 @@
         
         <Label Content="Player:" Margin="0,0,0,100" Grid.Column="0" HorizontalAlignment="Right" Height="40" VerticalAlignment="Center" Width="170" FontFamily="Showcard Gothic" FontSize="25"/>
         <Label Content="Pokemon:" Grid.Column="0" HorizontalAlignment="Right" Height="40" VerticalAlignment="Center" Width="170" FontFamily="Showcard Gothic" FontSize="25"/>
-        <Button x:Name="FinishButton" Content="Finish" Grid.Column="0" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}" Foreground="Black" FontFamily="Showcard Gothic" FontSize="25" Click="FinishButton_Click">
+        <Button x:Name="StartButton" Content="Start" Grid.Column="0" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}" Foreground="Black" FontFamily="Showcard Gothic" FontSize="25" Click="StartButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/attackbutton.png"/>
             </Button.Background>

@@ -123,15 +123,15 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             select1Pressed = false;
         }
 
-        private void FinishButton_Click(object sender, RoutedEventArgs e)
+        private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             if (player1.Name != "" && player2.Name != "" && player1.Pokemon != null && player2.Pokemon != null && player1.Name.Length < 255 && player2.Name.Length < 255)
             {
                 player1.Win = false;
-                player1.HP = 300;
+                player1.HP = 1000;
 
                 player2.Win = false;
-                player2.HP = 300;
+                player2.HP = 1000;
 
                 BattleWindow.player1 = player1;
                 BattleWindow.player2 = player2;
