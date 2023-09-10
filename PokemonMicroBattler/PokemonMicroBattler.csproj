@@ -327,5 +327,8 @@
   <ItemGroup>
     <Resource Include="PokemonMicroBattler.Templates\Other\notebook.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CreatePokemonDB.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
