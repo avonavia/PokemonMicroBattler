@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
 using System.Windows;
-using System.Configuration;
 using PokemonMicroBattler.PokemonMicroBattler.Data;
-using System.Windows.Media.Imaging;
 using System;
 using System.Linq;
 using System.Windows.Controls;
