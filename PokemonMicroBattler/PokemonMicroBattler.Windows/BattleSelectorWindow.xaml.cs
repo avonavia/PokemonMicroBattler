@@ -128,10 +128,10 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             if (player1.Name != "" && player2.Name != "" && player1.Pokemon != null && player2.Pokemon != null && player1.Name.Length < 255 && player2.Name.Length < 255)
             {
                 player1.Win = false;
-                player1.HP = 1000;
+                player1.HP = 500;
 
                 player2.Win = false;
-                player2.HP = 1000;
+                player2.HP = 500;
 
                 BattleWindow.player1 = player1;
                 BattleWindow.player2 = player2;
