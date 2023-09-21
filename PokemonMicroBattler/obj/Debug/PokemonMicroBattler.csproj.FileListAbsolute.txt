@@ -17,7 +17,6 @@ C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покем
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.exe
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Debug\PokemonMicroBattler.pdb
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.AssemblyReference.cache
-C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.csproj.SuggestedBindingRedirects.cache
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\MenuWindow.baml
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler.Windows\MenuWindow.g.cs
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Debug\PokemonMicroBattler_MarkupCompile.cache

@@ -5,7 +5,6 @@ C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покем
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Release\WpfAnimatedGif.pdb
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\bin\Release\WpfAnimatedGif.xml
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.csproj.AssemblyReference.cache
-C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.csproj.SuggestedBindingRedirects.cache
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\MenuWindow.baml
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\BattleSelectorWindow.g.cs
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\BattleWindow.g.cs
