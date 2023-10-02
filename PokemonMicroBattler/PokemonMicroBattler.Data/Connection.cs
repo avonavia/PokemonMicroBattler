@@ -82,7 +82,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
                 }
                 catch
                 {
-                    p.Img = null;
+                    p.Img = new BitmapImage(new Uri(@"../PokemonMicroBattler.Templates/PokemonGifs/EmptyGif.gif", UriKind.RelativeOrAbsolute)); ;
                 }
                 p.Moves = GetPokemonMoves(p.ID);
                 pokelist.Add(p);

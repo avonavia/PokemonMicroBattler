@@ -332,6 +332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreatePokemonDB.sql" />
+    <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\EmptyGif.gif" />
     <Resource Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
