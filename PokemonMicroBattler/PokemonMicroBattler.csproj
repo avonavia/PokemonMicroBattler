@@ -117,6 +117,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PokemonMicroBattler.Windows\PokemonAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PokemonMicroBattler.Windows\PokedexViewWindow.xaml.cs">
@@ -124,6 +128,9 @@
     </Compile>
     <Compile Include="PokemonMicroBattler.Windows\PokedexWindow.xaml.cs">
       <DependentUpon>PokedexWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonMicroBattler.Windows\PokemonAddWindow.xaml.cs">
+      <DependentUpon>PokemonAddWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

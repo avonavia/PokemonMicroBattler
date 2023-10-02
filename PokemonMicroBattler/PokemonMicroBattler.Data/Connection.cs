@@ -215,5 +215,147 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
 
             return count;
         }
+
+        public static void AddPokemon(int type1id, int type2id, string name, string desc, string w, string h, int level)
+        {
+            string cmdString = "AddPokemon";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter type1Param = new SqlParameter
+            {
+                ParameterName = "@type1id",
+                Value = type1id
+            };
+            cmd.Parameters.Add(type1Param);
+
+            SqlParameter type2Param = new SqlParameter
+            {
+                ParameterName = "@type2id",
+                Value = type2id
+            };
+            cmd.Parameters.Add(type2Param);
+
+            SqlParameter nameParam = new SqlParameter
+            {
+                ParameterName = "@name",
+                Value = name
+            };
+            cmd.Parameters.Add(nameParam);
+
+            SqlParameter descParam = new SqlParameter
+            {
+                ParameterName = "@desc",
+                Value = desc
+            };
+            cmd.Parameters.Add(descParam);
+
+            SqlParameter wParam = new SqlParameter
+            {
+                ParameterName = "@w",
+                Value = w
+            };
+            cmd.Parameters.Add(wParam);
+
+            SqlParameter hParam = new SqlParameter
+            {
+                ParameterName = "@h",
+                Value = h
+            };
+            cmd.Parameters.Add(hParam);
+
+            SqlParameter levelParam = new SqlParameter
+            {
+                ParameterName = "@level",
+                Value = level
+            };
+            cmd.Parameters.Add(levelParam);
+
+            con.Open();
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+        }
+
+        public static void AddMove(string name, int typeid, int power, int acc)
+        {
+            string cmdString = "AddMove";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter nameParam = new SqlParameter
+            {
+                ParameterName = "@name",
+                Value = name
+            };
+            cmd.Parameters.Add(nameParam);
+
+            SqlParameter typeParam = new SqlParameter
+            {
+                ParameterName = "@typeid",
+                Value = typeid
+            };
+            cmd.Parameters.Add(typeParam);
+
+            SqlParameter powerParam = new SqlParameter
+            {
+                ParameterName = "@power",
+                Value = power
+            };
+            cmd.Parameters.Add(powerParam);
+
+            SqlParameter accParam = new SqlParameter
+            {
+                ParameterName = "@acc",
+                Value = acc
+            };
+            cmd.Parameters.Add(accParam);
+
+            con.Open();
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+        }
+
+        public static void AddMoveToPokemon(int moveid, int pokemonid)
+        {
+            string cmdString = "AddMoveToPokemon";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter moveidParam = new SqlParameter
+            {
+                ParameterName = "@moveid",
+                Value = moveid
+            };
+            cmd.Parameters.Add(moveidParam);
+
+            SqlParameter idParam = new SqlParameter
+            {
+                ParameterName = "@pokemonid",
+                Value = pokemonid
+            };
+            cmd.Parameters.Add(idParam);
+
+            con.Open();
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+        }
     }
 }
