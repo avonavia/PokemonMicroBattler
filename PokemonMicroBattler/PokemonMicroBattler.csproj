@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PokemonMicroBattler.Windows\ChooseSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PokemonMicroBattler.Windows\LogWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,6 +98,9 @@
     </Compile>
     <Compile Include="PokemonMicroBattler.Windows\BattleWindow.xaml.cs">
       <DependentUpon>BattleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonMicroBattler.Windows\ChooseSettingsWindow.xaml.cs">
+      <DependentUpon>ChooseSettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PokemonMicroBattler.Windows\LogWindow.xaml.cs">
       <DependentUpon>LogWindow.xaml</DependentUpon>
@@ -332,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreatePokemonDB.sql" />
+    <Resource Include="PokemonMicroBattler.Templates\Other\settings.png" />
     <Resource Include="PokemonMicroBattler.Templates\PokemonGifs\EmptyGif.gif" />
     <Resource Include="icon.ico" />
   </ItemGroup>

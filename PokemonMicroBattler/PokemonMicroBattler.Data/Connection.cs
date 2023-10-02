@@ -196,5 +196,24 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
 
             return loglist;
         }
+
+        public static int GetMoveCount()
+        {
+            string cmdString = "GetMoveCount";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            con.Open();
+
+            int count = (int)cmd.ExecuteScalar();
+
+            con.Close();
+
+            return count;
+        }
     }
 }

@@ -70,6 +70,14 @@
                 <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/notebook.png"/>
             </Button.Background>
         </Button>
+        <Button x:Name="SettingsButton" Height="70" Width="70" HorizontalAlignment="Left" BorderBrush="{x:Null}" VerticalAlignment="Top" Style="{StaticResource NormalHover}" Grid.Row="0" Grid.Column="0" Click="SettingsButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/settings.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 
 </Window>

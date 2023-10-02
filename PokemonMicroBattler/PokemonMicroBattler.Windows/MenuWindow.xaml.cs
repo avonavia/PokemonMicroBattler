@@ -37,5 +37,12 @@ namespace PokemonMicroBattler
             logWindow.Show();
             Close();
         }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ChooseSettingsWindow chooseSettingsWindow = new ChooseSettingsWindow();
+            chooseSettingsWindow.Show();
+            Close();
+        }
     }
 }
