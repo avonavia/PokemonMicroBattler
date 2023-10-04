@@ -5,12 +5,19 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Media.Imaging;
 using System.Linq;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Reflection;
+using System.Windows;
+using System.Drawing;
+using System.Xaml;
 
 namespace PokemonMicroBattler.PokemonMicroBattler.Data
 {
     public static class Connection
     {
         public static string conString = ConfigurationManager.ConnectionStrings["PokemonDBConnectionString"].ConnectionString;
+
         private static List<Move> GetPokemonMoves(int id)
         {
             List<Move> movelist = new List<Move>();
@@ -38,6 +45,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             while (reader.Read())
             {
                 Move m = new Move();
+                m.Id = 0;
                 m.Name = reader[0].ToString();
                 m.Power = (int)reader[1];
                 m.Accuracy = (int)reader[2];
@@ -76,14 +84,17 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
                 p.Height = reader[5].ToString();
                 p.EvolveLevel = (int)reader[6];
                 p.Description = reader[7].ToString();
-                try
+
+                BitmapImage pic = new BitmapImage(new Uri(@"../PokemonMicroBattler.Templates/PokemonGifs/EmptyGif.gif", UriKind.RelativeOrAbsolute));
+
+                if (File.Exists("../../PokemonMicroBattler.Templates/PokemonGifs/" + p.Name + ".gif"))
                 {
-                    p.Img = new BitmapImage(new Uri(@"../PokemonMicroBattler.Templates/PokemonGifs/" + p.Name + ".gif", UriKind.RelativeOrAbsolute));
+
+                    pic = new BitmapImage(new Uri(@"../PokemonMicroBattler.Templates/PokemonGifs/" + p.Name + ".gif", UriKind.RelativeOrAbsolute));
                 }
-                catch
-                {
-                    p.Img = new BitmapImage(new Uri(@"../PokemonMicroBattler.Templates/PokemonGifs/EmptyGif.gif", UriKind.RelativeOrAbsolute)); ;
-                }
+                    
+                p.Img = pic;
+
                 p.Moves = GetPokemonMoves(p.ID);
                 pokelist.Add(p);
             }
@@ -91,6 +102,8 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             con.Close();
             return pokelist;
         }
+
+
         public static List<string> GetTypes()
         {
             List<string> typelist = new List<string>();
@@ -356,6 +369,38 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             cmd.ExecuteNonQuery();
 
             con.Close();
+        }
+
+        public static List<Move> GetAllMoves()
+        {
+            List<Move> movelist = new List<Move>();
+
+            string cmdString = "GetAllMoves";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            con.Open();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Move m = new Move();
+                m.Id = (int)reader[0];
+                m.Name = reader[1].ToString();
+                m.Power = (int)reader[2];
+                m.Accuracy = (int)reader[3];
+                m.Type = reader[4].ToString();
+                movelist.Add(m);
+            }
+
+            con.Close();
+
+            return movelist;
         }
     }
 }

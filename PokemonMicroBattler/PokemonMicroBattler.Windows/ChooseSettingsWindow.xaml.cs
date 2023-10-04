@@ -18,7 +18,9 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 
         private void Setting1Button_Click(object sender, RoutedEventArgs e)
         {
-
+            PokemonAddWindow pokemonAddWindow = new PokemonAddWindow();
+            pokemonAddWindow.Show();
+            Close();
         }
 
         private void Setting2Button_Click(object sender, RoutedEventArgs e)

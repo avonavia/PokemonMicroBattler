@@ -72,7 +72,7 @@
                             </Border.Effect>
                             <Grid>
                                 <TextBlock Padding="10" HorizontalAlignment="Center" Text="{Binding Name}" FontFamily="Showcard Gothic" FontWeight="Normal" FontSize="22"/>
-                                <Image gif:ImageBehavior.AnimatedSource="{Binding Img}" Width="100" Height="100"/>
+                                <Image Source="{Binding Img}" Width="100" Height="100"/>
                                 <Button Content="{Binding ID}" x:Name="PokedexButton" Height="50" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="50" BorderBrush="{x:Null}" Style="{StaticResource NormalHover}" Click="PokedexButton_Click" Foreground="{x:Null}">
                                     <Button.Effect>
                                         <DropShadowEffect/>
