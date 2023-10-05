@@ -81,7 +81,7 @@
                                 <TextBlock Margin="10,0,0,0" Text="{Binding PlayerOther}" FontFamily="Showcard Gothic" FontWeight="Normal" FontSize="22" Grid.Row="2" Grid.Column="0"/>
                                 <TextBlock Margin="10,0,0,0" Text="Pokemon Used:" FontFamily="Showcard Gothic" FontWeight="Normal" FontSize="22" Grid.Row="0" Grid.Column="1"/>
                                 <TextBlock Margin="10,0,0,0" Text="Time:" FontFamily="Showcard Gothic" FontWeight="Normal" FontSize="22" Grid.Row="4" Grid.Column="0"/>
-                                <Image Margin="10,0,0,0" gif:ImageBehavior.AnimatedSource="{Binding Pokemon.Img}" Width="150" Height="150" Grid.Row="1" Grid.RowSpan="5" Grid.Column="1"/>
+                                <Image Margin="10,0,0,0" Source="{Binding Pokemon.Img}" Width="150" Height="150" Grid.Row="1" Grid.RowSpan="5" Grid.Column="1"/>
                                 <TextBlock Margin="10,0,0,0" Text="{Binding DateTime}" FontFamily="Showcard Gothic" FontWeight="Normal" FontSize="22" Grid.Row="5" Grid.Column="0"/>
                             </Grid>
                         </Border>
