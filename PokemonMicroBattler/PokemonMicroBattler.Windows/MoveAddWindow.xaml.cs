@@ -80,6 +80,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
             if (ValidateBoxes())
             {
                 Connection.AddMove(NameBox.Text, Connection.GetTypeIDByName(SelectedType), Convert.ToInt32(PowerBox.Text), Convert.ToInt32(AccBox.Text));
+                MessageBox.Show("Success");
             }
         }
 
