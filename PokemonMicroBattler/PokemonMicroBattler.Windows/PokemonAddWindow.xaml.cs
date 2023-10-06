@@ -18,6 +18,7 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
         public List<string> types = new List<string>();
         public List<Move> moves = new List<Move>();
         public List<string> movenames = new List<string>();
+        public List<Pokemon> pokelist = Connection.GetPokemonList();
         public string SelectedType1 { get; set; }
         public string SelectedType2 { get; set; }
         public string SelectedMove1 { get; set; }
@@ -106,6 +107,10 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 {
                     throw new Exception("Same moves are not allowed");
                 }
+                if (pokelist.Exists(p => p.Name == NameBox.Text))
+                {
+                    throw new Exception("Pokemon already exists");
+                }
             }
             catch(Exception e)
             {
@@ -126,12 +131,14 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
                 var move3 = moves.Where(m => m.Name == Move3Box.Text).First();
                 var move4 = moves.Where(m => m.Name == Move4Box.Text).First();
 
-                Connection.AddMoveToPokemon(Connection.GetPokemonList().Count + 1, move1.Id);
-                Connection.AddMoveToPokemon(Connection.GetPokemonList().Count + 1, move2.Id);
-                Connection.AddMoveToPokemon(Connection.GetPokemonList().Count + 1, move3.Id);
-                Connection.AddMoveToPokemon(Connection.GetPokemonList().Count + 1, move4.Id);
+                var currentID = Connection.GetPokemonList().Where(p => p.Name == NameBox.Text).First().ID;
 
-                MessageBox.Show("Success.\nTo add a picture or a gif, add a gif image to the working directory and name it according to new Pokemon name");
+                Connection.AddMoveToPokemon(move1.Id, currentID);
+                Connection.AddMoveToPokemon(move2.Id, currentID);
+                Connection.AddMoveToPokemon(move3.Id, currentID);
+                Connection.AddMoveToPokemon(move4.Id, currentID);
+
+                MessageBox.Show("Success.\nTo add a picture, add a gif image to the working directory and name it according to new Pokemon name");
             }
         }
 
