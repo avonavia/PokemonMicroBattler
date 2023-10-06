@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Windows;
 using System.Drawing;
 using System.Xaml;
+using System.Xml.Linq;
 
 namespace PokemonMicroBattler.PokemonMicroBattler.Data
 {
@@ -103,7 +104,6 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             return pokelist;
         }
 
-
         public static List<string> GetTypes()
         {
             List<string> typelist = new List<string>();
@@ -129,6 +129,34 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Data
             con.Close();
 
             return typelist;
+        }
+
+        public static int GetTypeIDByName(string name)
+        {
+            int id = 0;
+
+            string cmdString = "GetTypeIDByName";
+
+            SqlConnection con = new SqlConnection(conString);
+
+            SqlCommand cmd = new SqlCommand(cmdString, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter nameParam = new SqlParameter
+            {
+                ParameterName = "@name",
+                Value = name
+            };
+            cmd.Parameters.Add(nameParam);
+
+            con.Open();
+
+            id = (int)cmd.ExecuteScalar();
+
+            con.Close();
+
+            return id;
         }
         public static void AddLog(string name1, string winState, string name2, int id)
         {

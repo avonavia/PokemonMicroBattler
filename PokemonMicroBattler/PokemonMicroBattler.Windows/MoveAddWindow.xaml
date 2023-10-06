@@ -1,0 +1,87 @@
+﻿<Window x:Class="PokemonMicroBattler.PokemonMicroBattler.Windows.MoveAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonMicroBattler.PokemonMicroBattler.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        ResizeMode="CanResizeWithGrip"
+        SizeToContent="Manual"
+        Title="Add Move" Height="500" Width="800">
+
+    <Window.Resources>
+        <Style x:Key="NormalHover" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Backgrounds/background.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+        <Button x:Name="AddButton" Content="Add Move" FontFamily="Showcard Gothic" FontSize="15" Height="50" Width="200" HorizontalAlignment="Center" BorderBrush="{x:Null}" VerticalAlignment="Top" Style="{StaticResource NormalHover}" Grid.Row="2" Grid.Column="1" Click="AddButton_Click" Margin="0,20,0,0">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/attackbutton.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="BackButton" Height="50" Width="50" HorizontalAlignment="Left" BorderBrush="{x:Null}" VerticalAlignment="Top" Style="{StaticResource NormalHover}" Grid.Row="0" Click="BackButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <ImageBrush ImageSource="/PokemonMicroBattler.Templates/Other/arrow.png"/>
+            </Button.Background>
+        </Button>
+
+        <ComboBox BorderThickness="2" BorderBrush="Black" Grid.Column="1" HorizontalContentAlignment="Center" x:Name="TypeBox" Height="40" Width="150" HorizontalAlignment="Center" FontSize="25" FontFamily="Showcard Gothic" VerticalAlignment="Center" Margin="0,10,0,0" SelectionChanged="TypeBox_SelectionChanged">
+            <ComboBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#B2EDEBD6" />
+            </ComboBox.Resources>
+        </ComboBox>
+
+        <TextBox x:Name="NameBox" Grid.Column="1" Height="40" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="200" FontFamily="Showcard Gothic" FontSize="25" Margin="0,10,0,0" />
+        <TextBox x:Name="PowerBox" Grid.Column="1" Grid.Row="1" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Showcard Gothic" FontSize="25" Margin="0,10,0,0"/>
+        <TextBox x:Name="AccBox" Grid.Column="1" Grid.Row="1" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" FontFamily="Showcard Gothic" FontSize="25" Margin="0,10,0,0" />
+        <Label Content="Type:" Grid.Column="0" HorizontalAlignment="Right" Height="40" VerticalAlignment="Center" Width="88" FontFamily="Showcard Gothic" FontSize="25"/>
+        <Label Content="Name:" Grid.Column="0" HorizontalAlignment="Right" Height="40" VerticalAlignment="Bottom" Width="88" FontFamily="Showcard Gothic" FontSize="25"/>
+        <Label Content="Power:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Height="40" VerticalAlignment="Top" Width="110" FontFamily="Showcard Gothic" FontSize="25"/>
+        <Label Content="Accuracy:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Height="40" VerticalAlignment="Center" Width="150" FontFamily="Showcard Gothic" FontSize="25"/>
+
+
+    </Grid>
+
+</Window>

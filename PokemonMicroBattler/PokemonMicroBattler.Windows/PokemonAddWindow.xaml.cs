@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using PokemonMicroBattler.PokemonMicroBattler.Data;
 using System.Linq;
-using System.Reflection.Emit;
 
 namespace PokemonMicroBattler.PokemonMicroBattler.Windows
 {
