@@ -32,3 +32,5 @@ C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покем
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\PokemonAddWindow.g.cs
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\ChooseSettingsWindow.baml
 C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\PokemonAddWindow.baml
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\MoveAddWindow.g.cs
+C:\Users\nyanp\Desktop\Курсовая Кузьменко 4 курс Покемоны\PokemonMicroBattler\PokemonMicroBattler\obj\Release\PokemonMicroBattler.Windows\MoveAddWindow.baml
