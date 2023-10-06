@@ -127,18 +127,25 @@ namespace PokemonMicroBattler.PokemonMicroBattler.Windows
         {
             if (player1.Name != null && player2.Name != null && player1.Pokemon != null && player2.Pokemon != null && player1.Name.Length < 255 && player2.Name.Length < 255)
             {
-                player1.Win = false;
-                player1.HP = 500;
+                if (player1.Name == player2.Name)
+                {
+                    MessageBox.Show("Player names must be different");
+                }
+                else
+                {
+                    player1.Win = false;
+                    player1.HP = 500;
 
-                player2.Win = false;
-                player2.HP = 500;
+                    player2.Win = false;
+                    player2.HP = 500;
 
-                BattleWindow.player1 = player1;
-                BattleWindow.player2 = player2;
+                    BattleWindow.player1 = player1;
+                    BattleWindow.player2 = player2;
 
-                BattleWindow battleWindow = new BattleWindow();
-                battleWindow.Show();
-                Close();
+                    BattleWindow battleWindow = new BattleWindow();
+                    battleWindow.Show();
+                    Close();
+                }
             }
         }
 
